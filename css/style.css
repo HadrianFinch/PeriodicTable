@@ -1,0 +1,279 @@
+*
+{
+    border-radius: 10pt;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+html, body
+{
+    background-color: #c3c3c3;
+}
+
+.shadow
+{
+    box-shadow: 0 4pt 8pt 0 rgba(0, 0, 0, 0.2), 0 6pt 20pt 0 rgba(0, 0, 0, 0.19);
+}
+
+#periodicTable
+{
+    top: 20pt;
+    position: fixed;
+    display: block;
+    width: calc((54pt * 18) - 6pt);
+    height: 100pt;
+
+    background: #00000000 !important;
+    
+    left: 50%;
+    transform: translate(-50%, 0);
+}
+
+div.cell
+{
+    position: absolute;
+    display: block;
+    width: 35pt;
+    height: 35pt;
+    padding: 5pt;
+    background-color: #b1b1b1;
+    /* margin: 5pt; */
+    cursor: pointer;
+    background-color: #ffffff;
+
+    transition: 0.3s;
+}
+div.cell:hover
+{
+    transform: scale(1.1, 1.1);
+    z-index: 1;
+}
+
+div.cell p, h1
+{
+    padding: 0;
+    margin: 0;
+    width: 100%;
+    text-align: center;
+    font-size: 10pt;
+}
+div.cell h1
+{
+    padding: 0pt 0;
+    font-size: 13pt;
+}
+
+div.cell p.atomicNumber
+{
+    text-align: right;
+}
+
+.s_block
+{
+    outline: 3pt solid #09deff;
+}
+.p_block
+{
+    outline: 3pt solid #ffa9ce;
+}
+.d_block
+{
+    outline: 3pt solid #70ffa7;
+}
+.f_block
+{
+    outline: 3pt solid #6750ff;
+}
+
+.metalloid_category
+{
+    background: linear-gradient(
+      45deg,
+      #999 5%,
+      #fff 10%,
+      #ccc 30%,
+      #ddd 50%,
+      #ccc 70%,
+      #fff 80%,
+      #999 95%
+    );
+    transition: all 0.2s ease-in-out;
+}
+
+.post-transition_metal_category
+{
+    background: linear-gradient(
+      45deg,
+      #00cbf3 5%,
+      #00c1c8 10%,
+      #48b8dd 30%,
+      #2da4ac 50%,
+      #7bcbf9 70%,
+      #41b5ef 80%,
+      #0090f6 95%
+    );
+    transition: all 0.2s ease-in-out;
+}
+
+.transition_metal_category
+{
+    background: linear-gradient(
+      45deg,
+      hsl(15, 100%, 48%) 5%,
+      hsl(15, 100%, 39%) 10%,
+      hsl(15, 69%, 57%) 30%,
+      hsl(15, 59%, 43%) 50%,
+      hsl(15, 91%, 73%) 70%,
+      hsl(15, 84%, 60%) 80%,
+      hsl(15, 100%, 48%) 95%
+    );
+    transition: all 0.2s ease-in-out;
+}
+
+.alkali_metal_category
+{
+    background: linear-gradient(
+      45deg,
+      #5100f3 5%,
+      #8a00f3 10%,
+      #b848dd 30%,
+      #862dac 50%,
+      #d97bf9 70%,
+      #e041ef 80%,
+      #7300f6 95%
+    );
+    transition: all 0.2s ease-in-out;
+}
+
+.alkaline_earth_metal_category
+{
+    backdrop-filter: hue-rotate(230deg);
+    background: linear-gradient(
+      45deg,
+      hsl(150, 100%, 48%) 5%,
+      hsl(150, 100%, 39%) 10%,
+      hsl(150, 69%, 57%) 30%,
+      hsl(150, 59%, 43%) 50%,
+      hsl(150, 91%, 73%) 70%,
+      hsl(150, 84%, 60%) 80%,
+      hsl(150, 100%, 48%) 95%
+    );
+    transition: all 0.2s ease-in-out;
+}
+
+div.diatomic_nonmetal_category,
+span.diatomic_nonmetal_category
+{
+    background-color: #70dada;
+}
+
+div.polyatomic_nonmetal_category,
+span.polyatomic_nonmetal_category
+{
+    background-color: #70beda;
+}
+div.noble_gas_category,
+span.noble_gas_category
+{
+    background-color: #ffee8b;
+}
+
+div.lanthanide_category,
+span.lanthanide_category
+{
+    color: white;
+    background-color: #6e2b52;
+}
+
+div.actinide_category,
+span.actinide_category
+{
+    color: white;
+    background-color: #333d60;
+}
+
+div.cell.selected
+{
+    transform: scale(1.3, 1.3);
+    z-index: 2;
+    box-shadow: 0 4pt 8pt 0 rgba(0, 0, 0, 0.386), 0 26pt 30pt 0 rgba(0, 0, 0, 0.398);
+}
+
+
+#popup
+{
+    left: 109pt;
+    top: 0pt;
+    position: absolute;
+    z-index: 2;
+    padding: 5pt;
+    margin: 0;
+    width: fit-content;
+    height: fit-content;
+    width: 521pt;
+    height: 143pt;
+
+    outline: 3pt solid #000000;
+    overflow-y: auto;
+}
+#popup img
+{
+    width: 100pt;
+    display: inline;
+}
+#popup > h1
+{
+    font-size: 20pt;
+}
+#popup > b
+{
+    display: inline-block;
+    position: relative;
+    text-align: center;
+    width: 100%;
+}
+#popup > p
+{
+    margin: 0;
+}
+#popup > ul
+{
+    columns: 2;
+}
+span.keyMarker
+{
+    display: inline-block;
+    width: 10pt;
+    height: 10pt;
+    border-radius: 3pt;
+}
+
+
+#periodicTable.diatomic_nonmetal_category div.cell:not(.diatomic_nonmetal_category):not(.nonElemental),
+#periodicTable.alkali_metal_category div.cell:not(.alkali_metal_category):not(.nonElemental),
+#periodicTable.alkaline_earth_metal_category div.cell:not(.alkaline_earth_metal_category):not(.nonElemental),
+#periodicTable.transition_metal_category div.cell:not(.transition_metal_category):not(.nonElemental),
+#periodicTable.post-transition_metal_category div.cell:not(.post-transition_metal_category):not(.nonElemental),
+#periodicTable.metalloid_category div.cell:not(.metalloid_category):not(.nonElemental),
+#periodicTable.polyatomic_nonmetal_category div.cell:not(.polyatomic_nonmetal_category):not(.nonElemental),
+#periodicTable.noble_gas_category div.cell:not(.noble_gas_category):not(.nonElemental),
+#periodicTable.lanthanide_category div.cell:not(.lanthanide_category):not(.nonElemental),
+#periodicTable.actinide_category div.cell:not(.actinide_category):not(.nonElemental)
+{
+    opacity: 0.2;
+}
+
+div.cell.searchButton
+{
+    outline: 3pt solid #000000;
+    background-color: #868686;
+    color: white;
+    z-index: 3;
+}
+
+div.cell.searchButton > h1 > input
+{
+    width: calc(100% - 5pt);
+    border: 2pt solid black;
+    border-radius: 6pt;
+    text-align: center;
+}
