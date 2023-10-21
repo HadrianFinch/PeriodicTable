@@ -80,13 +80,14 @@ const Search = {
         else
         {
             const sim = similarity(itemSymbol, q);
+            // const sim = 0;
             weight = base + sim;
 
             const lc = q.toLowerCase();
     
-            if (itemSymbol.includes(lc))
+            if (itemSymbol.toLowerCase() == q.toLowerCase())
             {
-                weight += 0.5;
+                weight += 100.5;
             }
 
         }
@@ -103,25 +104,15 @@ const Search = {
         {
             const item = inputLibrary[i];
 
-            var querryType = item.type;
-            if (querry.type)
-            {
-                querryType = querry.type;   
-            }
+            const weight = CalculateWeight(item.weight, s, item.name, item.data.symbol);
 
-            const sim = similarity(item.name, s);
-            if ((sim > 0.001) && (querryType == item.type))
-            {
-                const weight = CalculateWeight(item.weight, s, item.name, item.data.symbol);
-
-                lib.push({
-                    type: item.type,
-                    name: item.name,
-                    data: item.data,
-                    url: item.url,
-                    weight: weight
-                });
-            }
+            lib.push({
+                type: item.type,
+                name: item.name,
+                data: item.data,
+                url: item.url,
+                weight: weight
+            });
         }
 
         lib.sort((a, b) => b.weight - a.weight)
